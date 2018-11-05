@@ -130,9 +130,9 @@ right_vectors_test[:-1,:] = test_vec[:-1,:]
 embeddingdim = 300
 
 lstm_hidden = 50
-conv_hidden = 100
+dense_hidden = 100
 
-def rcnn_model(lstm_hidden,conv_hidden):
+def rcnn_model(lstm_hidden,dense_hidden):
   
   general_vector = Input(shape=(max_len,))
   left_vector = Input(shape=(max_len,))
@@ -152,9 +152,9 @@ def rcnn_model(lstm_hidden,conv_hidden):
   
   total_input = Concatenate(axis=-1)([general_out,left_context,right_context])
   
-  conv1d = Conv1D(conv_hidden,kernel_size=1,activation='tanh')(total_input)
+  dense = Dense(dense_hidden,activation='tanh')(total_input)
   
-  max_pool = Lambda(lambda x:K.max(conv1d,axis=1))(conv1d)
+  max_pool = Lambda(lambda x:K.max(conv1d,axis=1))(dense)
   
   final_out = Dense(1,activation='sigmoid')(max_pool)
   
@@ -162,7 +162,7 @@ def rcnn_model(lstm_hidden,conv_hidden):
   
   return model
 
-rcnn = rcnn_model(lstm_hidden,conv_hidden)
+rcnn = rcnn_model(lstm_hidden,dense_hidden)
 
 rcnn.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
 
