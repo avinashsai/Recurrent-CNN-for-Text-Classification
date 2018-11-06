@@ -7,7 +7,7 @@ This is the keras implementation of Recurrent CNN for text classification
 
 2.keras>=2.2.0
 
-3. Glove Pretrained vectors (42B)
+3.Glove Pretrained vectors (42B)
 
 # Usage
 
