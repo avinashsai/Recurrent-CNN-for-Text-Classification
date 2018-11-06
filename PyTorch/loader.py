@@ -41,7 +41,7 @@ def load_data(path):
 
 def load_embeddings(path):
 	glove_model = {}
-	with open(path+'glove.27B.300d.txt','r',encoding='utf-8') as f:
+	with open(path+'glove.42B.300d.txt','r',encoding='utf-8') as f:
 		for eachline in f.readlines():
 			words = eachline.split()
 			word = words[0]
