@@ -7,4 +7,6 @@ This is the implementation of the paper https://www.aaai.org/ocs/index.php/AAAI/
 I have used Glove 42B pretrained vectors instead of google pretrained vectors and adam is used as optimizer instead of SGD. Intialization is done is using glorot as opposed to uniform distribution mentioned in the paper.
 
 Keras Folder - Implementation in Keras
+
+
 PyTorch Folder - Implementation in PyTorch
