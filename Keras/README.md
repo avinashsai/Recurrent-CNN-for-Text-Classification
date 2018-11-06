@@ -11,10 +11,10 @@ This is the keras implementation of Recurrent CNN for text classification
 
 # Usage
 
-Download Glove pretrained vectors and mention corresponding path in ```main.py```
+Download Glove pretrained vectors and mention corresponding path in ```rcnn.py```
 
 Run using 
 
 ```
-python main.py
+python rcnn.py
 ```
