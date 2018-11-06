@@ -5,7 +5,7 @@ This is the Pytorch Implementation of Recurrent CNN for text classification
 # Required Packages
 1. Pytorch>=0.4
 
-2. Glove Pre trained Vectors(27B)
+2. Glove Pre trained Vectors(42B)
 
 # Usage
 
