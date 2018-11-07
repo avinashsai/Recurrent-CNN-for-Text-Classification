@@ -21,5 +21,5 @@ python main.py -m (Vocabulary Size)
                -d (Number of hidden units of Dense Layer)
                -o (Optimizer (Adam or SGD))
                -e (Number of Epochs)
-```
+
                -
