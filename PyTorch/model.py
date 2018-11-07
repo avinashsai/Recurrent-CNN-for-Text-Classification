@@ -16,7 +16,7 @@ class rcnn(nn.Module):
 		self.embed = nn.Embedding.from_pretrained(self.embed_matrix)
 		self.embed.weight.requires_grad = False
 		self.lstm = nn.LSTM(self.embed_dim,self.lstm_hidden,batch_first=True)
-		self.dense1 = nn.Linear((300+2*self.lstm_hidden),self.dense_hidden)
+		self.dense1 = nn.Linear((self.embed_dim+2*self.lstm_hidden),self.dense_hidden)
 		self.act1 = nn.Tanh()
 		self.dense2 = nn.Linear(self.dense_hidden,1)
 		self.act2 = nn.Sigmoid()
