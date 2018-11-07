@@ -19,11 +19,16 @@ def get_vectors(vocabulary,corpus,maxlen):
 
 	for i in range(length):
 		lexicons = corpus[i].split()
-		vector = torch.zeros(maxlen)
-		lexicons = lexicons[:min(length,maxlen)]
+		vector = torch.zeros(maxlen).long()
+		count = 0
 		for j in range(len(lexicons)):
 			if lexicons[j] in vocabulary:
-				vectors[i,j] = vocabulary[lexicons[j]]
+				vector[count] = vocabulary[lexicons[j]]
+				count+=1
+			if(count>=maxlen-1):
+				vectors[i,:] = vector
+				break
+		vectors[i,:] = vector
 
 	return vectors
 
