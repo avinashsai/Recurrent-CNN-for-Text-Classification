@@ -22,4 +22,4 @@ python main.py -m (Vocabulary Size)
                -o (Optimizer (Adam or SGD))
                -e (Number of Epochs)
 
-               -
+               
