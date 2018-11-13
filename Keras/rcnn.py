@@ -154,7 +154,7 @@ def rcnn_model(lstm_hidden,dense_hidden):
   
   dense = Dense(dense_hidden,activation='tanh')(total_input)
   
-  max_pool = Lambda(lambda x:K.max(conv1d,axis=1))(dense)
+  max_pool = Lambda(lambda x:K.max(dense,axis=1))(dense)
   
   final_out = Dense(1,activation='sigmoid')(max_pool)
   
