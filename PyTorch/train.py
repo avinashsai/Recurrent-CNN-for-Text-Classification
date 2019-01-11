@@ -16,7 +16,7 @@ def get_accuracy(net,loader):
 
 	correct = 0
 	total = 0
-
+	net.eval()
 	for batchidx,(gen,left,right,labels) in enumerate(loader):
 		labels = labels.double()
 		pred = net(gen,left,right)
@@ -33,6 +33,7 @@ def train_model(model,train_loader,test_loader,optim,epochs):
 	optimizer = get_optimizer(optim,model)
 
 	for epoch in range(epochs):
+		model.train()
 		for batchidx,(gen,left,right,labels) in enumerate(train_loader):
 			labels = labels.view(-1,1).float()
 
